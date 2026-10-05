@@ -1,0 +1,50 @@
+{
+  "name": "billflow-backend",
+  "version": "1.0.0",
+  "description": "Backend API for BillFlow - Invoice and Client Management System",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "seed": "ts-node src/scripts/seed_mock_data.ts",
+    "setup:db": "ts-node src/scripts/bootstrapDatabase.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "invoice",
+    "billing",
+    "client-management",
+    "api"
+  ],
+  "author": "BillFlow Team",
+  "license": "MIT",
+  "dependencies": {
+    "argon2": "^0.40.1",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.2.0",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "playwright-core": "^1.42.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/compression": "^1.8.1",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^20.11.30",
+    "better-sqlite3": "^12.6.2",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  }
+}

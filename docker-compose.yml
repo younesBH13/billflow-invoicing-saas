@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./billflow-backend
+    container_name: billflow-backend
+    restart: always
+    env_file:
+      - ./billflow-backend/.env
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./billflow-backend/data:/app/data
+    networks:
+      - billflow-net
+
+  frontend:
+    build: ./billflow-client-scribe
+    container_name: billflow-frontend
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - billflow-net
+
+networks:
+  billflow-net:
+    driver: bridge
